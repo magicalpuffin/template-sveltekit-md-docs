@@ -3,13 +3,12 @@
 	import '../app.css';
 
 	let { children, data } = $props();
-	console.log($page.url.pathname);
 </script>
 
 <div class="container mx-auto max-w-5xl">
 	<div class="flex flex-col md:flex-row">
 		<div
-			class="overflow-y-scroll py-4 px-4 mx-2 md:w-56 md:h-screen md:border-r-2"
+			class="overflow-y-scroll px-4 mx-2 h-36 border-b-2 md:py-4 md:w-64 md:h-screen md:border-r-2 scrollbar-transparent"
 		>
 			<h3 class="my-4 text-2xl font-bold">Pages</h3>
 			<ul>
@@ -34,10 +33,17 @@
 				{/each}
 			</ul>
 		</div>
-		<div class="overflow-y-scroll w-full h-screen">
+		<div class="overflow-y-scroll w-full md:h-screen scrollbar-transparent">
 			<div class="my-4 mx-4">
 				{@render children()}
 			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+	.scrollbar-transparent {
+		scrollbar-width: thin;
+		scrollbar-color: #0000004d transparent;
+	}
+</style>
