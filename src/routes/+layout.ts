@@ -2,6 +2,8 @@ import type { ContentModules } from "$lib/types";
 import { pathToSlug } from "$lib/utils";
 import type { LayoutLoad } from "./$types";
 
+export const prerender = "auto";
+
 export const load = (async () => {
 	const modules = import.meta.glob("/src/lib/content/*.md") as ContentModules;
 

@@ -1,13 +1,33 @@
 ---
 title: Getting Started
-description: This is a description
+description: How to get started using template-sveltekit-md-docs
 ---
-
-## Overview
-
-Welcome to this template. Here are the steps to get started
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**template-sveltekit-md-docs** is designed to be a template for users to edit and adapt to their own use case.
 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+To get started clone the repo from github:
+
+```sh
+git clone https://github.com/magicalpuffin/template-sveltekit-md-docs.git
+```
+
+Install all packages:
+- You can use a different directory and package package manager
+
+```sh
+cd template-sveltekit-md-docs
+pnpm install
+```
+
+Run the SvelteKit site in dev mode:
+
+```sh
+pnpm run dev
+```
+
+Build the SvelteKit site:
+- This template uses the cloudflare adapter to make this template self documenting
+
+```sh
+pnpm run build
+```

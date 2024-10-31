@@ -1,4 +1,5 @@
-import adapter from "@sveltejs/adapter-auto";
+//import adapter from "@sveltejs/adapter-auto";
+import adapter from "@sveltejs/adapter-cloudflare";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { fromString as stringToHast } from "hast-util-from-string";
 import { toHtml as hastToHtml } from "hast-util-to-html";
@@ -18,8 +19,9 @@ const highlighter = await createHighlighter({
 		"typescript",
 		"svelte",
 		"html",
-		"sh",
+		"markdown",
 		"toml",
+		"sh",
 		"powershell",
 		"python",
 	],
@@ -40,12 +42,12 @@ export function rehypeEnhancedImage() {
 			if (node.tagName === "img") {
 				if (typeof node.properties.src === "string") {
 					const srcext = node.properties.src?.toString().split(".").pop();
-					node.properties.src = node.properties.src.replaceAll("%20", " ");
 
 					if (srcext === "gif") {
 						node.properties.src = node.properties.src.replace("/static", "");
 					} else {
 						// Change the tag name to 'enhanced:img'
+						node.properties.src = node.properties.src.replaceAll("%20", " ");
 						node.tagName = "enhanced:img";
 					}
 				}
