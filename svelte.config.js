@@ -66,7 +66,7 @@ export function rehypeHtmlKatex() {
 	return (tree) => {
 		visit(tree, "element", (node) => {
 			// Check if the node is an img element
-			if (node.properties?.className?.includes("math")) {
+			if (node.properties?.className?.includes("katex")) {
 				const katexHtml = hastToHtml(node);
 				stringToHast(node, `{@html ${JSON.stringify(katexHtml)}}`);
 			}

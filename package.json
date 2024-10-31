@@ -31,7 +31,7 @@
 		"prettier-plugin-svelte": "^3.2.6",
 		"prettier-plugin-tailwindcss": "^0.6.5",
 		"rehype-katex": "^7.0.0",
-		"remark-math": "^6.0.0",
+		"remark-math": "3.0.0",
 		"shiki": "^1.22.2",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
