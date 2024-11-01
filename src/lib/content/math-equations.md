@@ -1,6 +1,6 @@
 ---
 title: Math Equations
-description: This is a description
+description: Math equations are rendered on template-sveltekit-md-docs using katex and a custom rehype plugin.
 ---
 Math equations are rendered using `katex`
 

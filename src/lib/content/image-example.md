@@ -1,6 +1,6 @@
 ---
 title: Image Example
-description: This is a description
+description: Images are optimized in template-sveltekit-md-docs using @sveltejs/enhanced-img. File paths are also automatically parsed using a custom rehype plugin.
 ---
 Images in markdown are optimized using `@sveltejs/enhanced-img`. File paths are also fixed
 

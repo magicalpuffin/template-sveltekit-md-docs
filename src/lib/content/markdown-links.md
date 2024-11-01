@@ -1,6 +1,6 @@
 ---
 title: Markdown Links
-description: This is a description
+description: Markdown link between files are supported by template-sveltekit-md-docs using a custom rehype plugin
 ---
 Links in between markdown files are automatically converted to corresponding urls on the site.
 
