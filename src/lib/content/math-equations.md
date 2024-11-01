@@ -51,6 +51,8 @@ import { fromString as stringToHast } from "hast-util-from-string";
 import { toHtml as hastToHtml } from "hast-util-to-html";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
+import { visit } from "unist-util-visit";
+
 
 /**
  * @import {Root} from 'hast'
