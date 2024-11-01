@@ -60,6 +60,32 @@ export function rehypeEnhancedImage() {
  * @import {Root} from 'hast'
  */
 
+export function rehypeMarkdownLinks() {
+	/**
+	 * @param {Root} tree
+	 * @return {undefined}
+	 */
+	return (tree) => {
+		visit(tree, "element", (node) => {
+			if (node.tagName === "a") {
+				if (typeof node.properties.href === "string") {
+					const srcext = node.properties.href?.toString().split(".").pop();
+
+					if (srcext === "md") {
+						node.properties.href = node.properties.href
+							.replace("/src/lib/content", "")
+							.replace(".md", "");
+					}
+				}
+			}
+		});
+	};
+}
+
+/**
+ * @import {Root} from 'hast'
+ */
+
 export function rehypeHtmlKatex() {
 	/**
 	 * @param {Root} tree
@@ -67,7 +93,6 @@ export function rehypeHtmlKatex() {
 	 */
 	return (tree) => {
 		visit(tree, "element", (node) => {
-			// Check if the node is an img element
 			if (node.properties?.className?.includes("katex")) {
 				const katexHtml = hastToHtml(node);
 				stringToHast(node, `{@html ${JSON.stringify(katexHtml)}}`);
@@ -79,7 +104,12 @@ export function rehypeHtmlKatex() {
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
 	remarkPlugins: [remarkMath],
-	rehypePlugins: [rehypeEnhancedImage, rehypeKatex, rehypeHtmlKatex],
+	rehypePlugins: [
+		rehypeEnhancedImage,
+		rehypeMarkdownLinks,
+		rehypeKatex,
+		rehypeHtmlKatex,
+	],
 	extensions: [".svx", ".md"],
 	highlight: {
 		highlighter: async (code, lang = "text") => {

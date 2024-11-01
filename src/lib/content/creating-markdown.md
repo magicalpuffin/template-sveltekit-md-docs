@@ -1,8 +1,8 @@
 ---
 title: Creating Markdown
-description:
+description: Markdown files are created within src/lib/content and dynamically rendered using the slug. This uses vite glob import to load all markdown content and pass it as a component to the svelte page
 ---
-Markdown files are directly created in `$lib/components/content` and are dynamically rendered based on the slug.
+Markdown files are directly created in `src/lib/content` and are dynamically rendered based on the slug.
 
 ## How it works
 Using vite glob imports are used to automatically import all markdown files
